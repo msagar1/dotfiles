@@ -1,0 +1,76 @@
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# ---- Editors / IDEs ----
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.cursor/
+.idea/
+*.iml
+*.iws
+*.swp
+*.swo
+*.swn
+Session.vim
+.netrwhist
+*.sublime-workspace
+*.sublime-project
+*~
+\#*\#
+.\#*
+
+# ---- Logs & temp ----
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+.cache/
+tmp/
+temp/
+
+# ---- Environment / secrets ----
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ---- Node / JS ----
+node_modules/
+.npm
+.pnpm-store/
+.yarn/cache
+.yarn/install-state.gz
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.pytest_cache/
+
+# ---- Build artifacts ----
+dist/
+build/
+out/
+.next/
+.turbo/
+
+# ---- Misc ----
+.direnv/
+.tool-versions
+.history/

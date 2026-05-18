@@ -1,0 +1,49 @@
+# Minimal starship config
+
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$python\
+$aws\
+$cmd_duration\
+$line_break\
+$character"""
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bold cyan"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[git_status]
+style = "bold yellow"
+
+[nodejs]
+symbol = " "
+style = "bold green"
+format = "via [$symbol($version )]($style)"
+
+[python]
+symbol = " "
+style = "bold yellow"
+format = "via [$symbol($version )]($style)"
+
+[aws]
+symbol = "  "
+style = "bold yellow"
+format = "on [$symbol($profile )(\\($region\\) )]($style)"
+
+[cmd_duration]
+min_time = 2000
+format = "took [$duration](bold yellow) "

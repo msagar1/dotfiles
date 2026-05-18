@@ -1,0 +1,12 @@
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEm1IvRrM4Kl6/Hw5l5SLA8LrrGd6khebYmXzVpy8PHn
+	name = Mihir Sagar
+	email = 6526365+msagar1@users.noreply.github.com
+[core]
+	excludesfile = ~/.gitignore_global

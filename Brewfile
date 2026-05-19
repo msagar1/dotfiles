@@ -66,6 +66,8 @@ cask "logseq"
 cask "obsidian"
 # Collaboration platform for API development
 cask "postman"
+# VPN client focusing on security
+cask "protonvpn"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas

@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+# Sync current configs into dotfiles repo and push
+
+set -e
+
+DOTFILES="$HOME/dotfiles"
+
+if [ ! -d "$DOTFILES" ]; then
+  echo "❌ ~/dotfiles not found"
+  exit 1
+fi
+
+cd "$DOTFILES"
+
+echo "📦 Dumping current Brewfile..."
+brew bundle dump --file=Brewfile --describe --force
+
+# Files that are symlinks (~/.zshrc, ~/.config/starship.toml, ~/.gitignore_global)
+# don't need copying — editing them IS editing the dotfiles version.
+# Only copy files that are real copies (not symlinks).
+
+echo "📋 Capturing non-symlinked configs..."
+
+# gitconfig is a copy, not a symlink — needs syncing
+if [ -f ~/.gitconfig ] && [ ! -L ~/.gitconfig ]; then
+  cp ~/.gitconfig gitconfig
+fi
+
+# LazyVim extras file is a copy (it's machine-specific so we keep it that way)
+if [ -f ~/.config/nvim/lazyvim.json ]; then
+  cp ~/.config/nvim/lazyvim.json nvim-lazyvim.json
+fi
+
+# Ghostty config — depends on how it's set up
+if [ -f ~/.config/ghostty/config ] && [ ! -L ~/.config/ghostty/config ]; then
+  cp ~/.config/ghostty/config ghostty-config
+fi
+
+echo ""
+echo "📋 Changes:"
+git status --short
+
+if [ -z "$(git status --porcelain)" ]; then
+  echo ""
+  echo "✅ Nothing to commit"
+  exit 0
+fi
+
+echo ""
+read -p "Commit and push? [y/N] " confirm
+if [[ $confirm == [yY] ]]; then
+  git add .
+  read -p "Commit message [Sync configs $(date '+%Y-%m-%d')]: " msg
+  msg="${msg:-Sync configs $(date '+%Y-%m-%d')}"
+  git commit -m "$msg"
+  git push
+  echo "✅ Pushed"
+else
+  echo "Skipped commit. Changes remain staged in ~/dotfiles."
+fi

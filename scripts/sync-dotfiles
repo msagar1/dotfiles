@@ -14,6 +14,7 @@ cd "$DOTFILES"
 
 echo "📦 Dumping current Brewfile..."
 brew bundle dump --file=Brewfile --describe --force
+sed -i '' '/^npm /d' Brewfile
 
 # Files that are symlinks (~/.zshrc, ~/.config/starship.toml, ~/.gitignore_global)
 # don't need copying — editing them IS editing the dotfiles version.

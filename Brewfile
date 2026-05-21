@@ -1,5 +1,10 @@
+tap "oven-sh/bun"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Load/unload environment variables based on $PWD
+brew "direnv"
 # Modern, maintained replacement for ls
 brew "eza"
 # Simple, fast and user-friendly alternative to find
@@ -12,6 +17,8 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Tool for glamorous shell scripts
+brew "gum"
 # Improved top (interactive process viewer)
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
@@ -22,12 +29,16 @@ brew "jq"
 brew "lazygit"
 # Mac App Store command-line interface
 brew "mas"
+# Show markdown documents on text terminals
+brew "mdcat"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-# Fast, disk space efficient package manager
-brew "pnpm"
+# Process manager for Procfile-based applications and tmux
+brew "overmind"
+# CLI for Postgres with auto-completion and syntax highlighting
+brew "pgcli"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Cross-shell prompt for astronauts
@@ -40,6 +51,8 @@ brew "tree"
 brew "wget"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password

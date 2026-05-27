@@ -59,3 +59,4 @@ alias reload="exec zsh"
 # ---- Aliases: Config quick-edit ----
 alias ezsh="nvim ~/.zshrc"
 alias estar="nvim ~/.config/starship.toml"
+export PATH="$HOME/.local/bin:$PATH"

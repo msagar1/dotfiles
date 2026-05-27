@@ -65,6 +65,8 @@ cask "1password-cli"
 cask "appcleaner"
 # Write, edit, and chat about your code with AI
 cask "cursor"
+# Voice and text chat software
+cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Web browser
@@ -91,6 +93,8 @@ cask "raycast"
 cask "rectangle"
 # Music streaming service
 cask "spotify"
+# Video game digital distribution service
+cask "steam"
 # Native GUI tool for relational databases
 cask "tableplus"
 # Unpacks archive files
@@ -106,4 +110,5 @@ mas "iMovie", id: 408981434
 mas "Keynote", id: 361285480
 mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
+mas "Things", id: 904280696
 vscode "github.copilot-chat"
